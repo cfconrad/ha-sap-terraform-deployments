@@ -25,7 +25,7 @@ pipeline {
                                            url: 'https://github.com/SUSE/ha-sap-terraform-deployments']]])
 
              dir("${WORKSPACE}/ha-sap-terraform-deployments") {
-                sh(script: "git checkout ${env.BRANCH_NAME}", label: "Checkout PR Branch")
+                sh(script: "git checkout ${BRANCH_NAME}", label: "Checkout PR Branch")
             }
         }}
         stage('Setting GitHub in-progress status') { steps {
