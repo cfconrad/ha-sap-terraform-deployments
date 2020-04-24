@@ -22,6 +22,10 @@ pipeline {
                       submoduleCfg: [],
                       userRemoteConfigs: [[refspec: '+refs/pull/*:refs/remotes/origin/pr/*',
                                            url: 'https://github.com/SUSE/ha-sap-terraform-deployments']]])
+
+             dir("${WORKSPACE}/ha-sap-terraform-deployments") {
+                sh(script: "git checkout ${env.BRANCH_NAME}", label: "Checkout PR Branch")
+            }
         }}
         stage('Setting GitHub in-progress status') { steps {
             sh(script: "ls")
