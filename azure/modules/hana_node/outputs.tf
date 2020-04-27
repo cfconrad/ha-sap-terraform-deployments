@@ -28,6 +28,10 @@ output "cluster_nodes_name" {
   value = azurerm_virtual_machine.hana.*.name
 }
 
+output "cluster_nodes_id" {
+  value = azurerm_virtual_machine.hana.*.id
+}
+
 output "cluster_nodes_public_name" {
   value = data.azurerm_public_ip.hana.*.fqdn
 }

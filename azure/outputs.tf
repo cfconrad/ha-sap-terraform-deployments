@@ -54,6 +54,10 @@ output "cluster_nodes_name" {
   value = module.hana_node.cluster_nodes_name
 }
 
+output "cluster_nodes_id" {
+  value = module.hana_node_clusternodes_id
+}
+
 output "cluster_nodes_public_name" {
   value = module.hana_node.cluster_nodes_public_name
 }
